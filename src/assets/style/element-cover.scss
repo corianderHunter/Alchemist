@@ -1,0 +1,88 @@
+@import './variable.scss';
+
+/* 改变 icon 字体路径变量，必需 */
+$--font-path: '~element-ui/lib/theme-chalk/fonts';
+
+@import "~element-ui/packages/theme-chalk/src/index";
+
+.el-table .el-table__header tr th {
+    background-color: #f3f3f3;
+}
+
+.card-tree {
+    .el-tree-node {
+
+
+        &:last-child {
+            border: none;
+        }
+    }
+
+    .el-tree-node__content {
+        height: 48px;
+        line-height: 48px;
+        border-bottom: 1px solid #EBEEF5;
+    }
+
+    .el-tree-node__expand-icon {
+        position: relative;
+        margin: 0 10px;
+        padding: 0;
+        width: 14px;
+        height: 14px;
+        background: #409EFF;
+        border-radius: 2px;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 2px;
+            height: 8px;
+            background: #fff;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 8px;
+            height: 2px;
+            background: #fff;
+        }
+
+        &.expanded {
+            &::after {
+                opacity: 0;
+            }
+        }
+
+        &.is-leaf {
+            opacity: 0;
+        }
+    }
+
+}
+
+.custom-tree-node {
+    display: flex;
+    width: 100%;
+    text-align: left;
+    font-size: 14px;
+
+    .custom-tree-node-name {
+        flex: 1;
+    }
+
+    .custom-tree-node-description {
+        width: 400px;
+    }
+}
+
+.el-pagination {
+    text-align: right;
+}
